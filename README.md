@@ -4,6 +4,12 @@
 
 resist is a command-line tool that reads from stdin and redirects the input to one of several file descriptors based on provided conductances. The likelihood of a file descriptor being chosen is proportional to its conductance.
 
+If you are using Nix you can run resist without installing it:
+
+```console
+nix run github:nilp0inter/resist
+```
+
 ## Compilation
 
 To compile resist, you will need Rust's package manager, Cargo. Ensure you have Rust and Cargo installed on your system.
