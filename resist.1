@@ -1,0 +1,33 @@
+.TH RESIST 1 "2024-01-13" "1.0" "Resist Command Manual"
+.SH NAME
+resist \- redirect stdin to multiple file descriptors based on given conductances
+
+.SH SYNOPSIS
+.B resist
+[CONDUCTANCE1] [CONDUCTANCE2] ...
+
+.SH DESCRIPTION
+The
+.B resist
+command reads from stdin and redirects the input to one of several file descriptors. The file descriptors are chosen based on the provided conductances, with a higher conductance increasing the probability of selection.
+
+.SH OPTIONS
+The following options are available:
+
+.TP
+.B CONDUCTANCE
+A numerical value representing the conductance for a corresponding file descriptor. The first conductance corresponds to stdout (fd 1), the second to stderr (fd 2), and so on.
+
+.SH EXAMPLES
+To redirect input with conductances 30, 15, and 2 to three different files (file1.txt, file2.txt, and file3.txt), using file descriptors 1 (stdout), 2 (stderr), and 3, respectively:
+
+.EX
+resist 30 15 2 1>file1.txt 2>file2.txt 3>file3.txt
+.EE
+
+.SH AUTHOR
+Written by Roberto Abdelkader Martínez Pérez.
+
+.SH "SEE ALSO"
+.BR cat (1),
+.BR echo (1)
