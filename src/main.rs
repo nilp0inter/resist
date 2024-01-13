@@ -14,6 +14,12 @@ fn main() -> io::Result<()> {
     let mut outputs = Vec::new();
 
     // Skip the first argument (program name)
+    if args.len() <= 1 {
+        println!("Usage: resist CONDUCTANCE1 CONDUCTANCE2 ...");
+        println!("Writes input to file descriptors based on provided conductances.");
+        return Ok(());
+    }
+
     for (index, arg) in args.iter().enumerate().skip(1) {
         let conductance: f64 = arg.parse().expect("Invalid conductance value");
         probabilities.push(conductance);
