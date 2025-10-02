@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 nix = { version = "0.27.1", features = ["fs"] }
-rand = "0.8.5"
+rand = "0.9.0"
